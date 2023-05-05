@@ -1,0 +1,4 @@
+services:
+  ngnix:
+    image: ngnix:latest
+      
