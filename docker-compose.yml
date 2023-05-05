@@ -1,4 +1,17 @@
+version: '3.7'
+
+networks:
+  load-balancer-nginx:
+    name: load-balancer-ngnix
+    external: true
+
 services:
   ngnix:
-    image: ngnix:latest
-      
+    image: nginx
+    volumes:
+      - ./templates:/etc/nginx/templates
+    ports:
+      - 80:80
+    networks:
+      - load-balancer-nginx
+    
