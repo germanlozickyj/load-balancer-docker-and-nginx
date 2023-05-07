@@ -6,10 +6,11 @@ networks:
     external: true
 
 services:
-  ngnix:
-    image: nginx
+  ngimx:
+    build:
+      context: ./docker
     volumes:
-      - ./templates:/etc/nginx/templates
+      - ./html:/usr/share/nginx/html
     ports:
       - 80:80
     networks:
