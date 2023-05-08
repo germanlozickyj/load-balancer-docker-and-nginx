@@ -12,6 +12,8 @@ services:
       dockerfile: DockerFile
     ports:
       - "6000"
+    networks:
+      - load-balancer-nginx
 
   nginx:
     image: nginx:latest
