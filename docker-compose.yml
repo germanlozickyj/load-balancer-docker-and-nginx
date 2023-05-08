@@ -6,11 +6,19 @@ networks:
     external: true
 
 services:
-  ngimx:
+  app:
     build:
       context: ./docker
+      dockerfile: DockerFile
+    ports:
+      - "6000"
+
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - app
     volumes:
-      - ./html:/usr/share/nginx/html
+      - ./ngnix.conf:/etc/nginx/nginx.confg:ro
     ports:
       - 80:80
     networks:
