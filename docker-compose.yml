@@ -8,12 +8,14 @@ networks:
 services:
   app:
     build:
-      context: ./docker
-      dockerfile: DockerFile
+      context: .
+      dockerfile: ./docker/DockerFile
     ports:
       - "6000"
     networks:
       - load-balancer-nginx
+    volumes:
+      - ./src:/src/
 
   nginx:
     image: nginx:latest
