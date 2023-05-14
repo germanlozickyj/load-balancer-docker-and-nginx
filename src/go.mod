@@ -1,3 +1,4 @@
+module github.com/germanlozickyj/load-balancer
 
 go 1.20
 
